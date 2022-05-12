@@ -90,7 +90,7 @@ const Post: NextPage<Props> = ({ post }) => {
 					prose-figcaption:text-blue
 					prose-strong:text-fg font-weight-bold
 					prose-em:text-fg font-weight-thin
-					prose-code:text-red
+					prose-code:text-magenta
 					// prose-code:rounded 
 					prose-code:bg-bg
 					prose-code:before:text-zinc
