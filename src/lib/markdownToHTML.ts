@@ -1,9 +1,29 @@
+import remarkGfm from 'remark-gfm';
 import { remark } from "remark";
-import html from "remark-html";
+import { unified } from 'unified';
+import rehypeKatex from 'rehype-katex'
+import 'katex/dist/katex.min.css'
+import remarkMath from 'remark-math'
+import remarkParse from 'remark-parse';
+// import remarkGithub from 'remark-github';
+// import stringWidth from 'string-width'
+import remarkHtml from "remark-html";
+import rehypeHighlight from 'rehype-highlight'
+// import rehypeSanitize from 'rehype-sanitize';
 
 const markdownToHTML = async (markdown: string) => {
-	const result = await remark().use(html).process(markdown);
+	const result = await unified()
+		.use(remarkParse)
+		.use(remarkHtml)
+		.use(remarkMath)
+		.use(rehypeKatex)
+		// .use(remarkGithub)
+		.use(remarkGfm)
+		.use(rehypeHighlight, {plainText: ['txt', 'text']})
+		.process(markdown);
 	return result.toString();
 };
+
+
 
 export default markdownToHTML;
