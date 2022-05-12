@@ -1,13 +1,16 @@
 ---
 title: "Test"
-date: "1970/01/01"
+date: "1970-01-01"
 slug: "first"
 description: "This is the first post"
 ---
 
-# Markdown Guide
-
-![The Ultimate Guide to Markdown](http://blog.ghost.org/content/images/2015/03/markdown-guide-1.jpg)
+# This is an `<h1>` tag
+## This is an `<h2>` tag
+### This is an `<h3>` tag
+#### This is an `<h4>` tag
+##### This is an `<h5>` tag
+###### This is an `<h6>` tag
 
 ## Basic Markdown Formatting
 

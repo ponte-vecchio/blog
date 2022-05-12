@@ -24,21 +24,31 @@ const Index: NextPage<Props> = ({ allPosts }) => {
 				<link rel="icon" href="/colorwheel.ico"></link>
 				<img src="https://avatars.githubusercontent.com/u/64239070?v=4" alt="avatar" className="w-32 h-32 rounded-full" />
 			</Head>
-
-			<div className="mt-16">
+			<div className="flex flex-col items-left justify-left mt-16">
 				{allPosts.map((post) => (
-					<div className="my-3" key={post.slug}>
+					<div className="my-3 mb-10" key={post.slug} style={{verticalAlign: 'top'}}>
 						<a
-							href={"blog/" + post.slug}
+							href={"posts/" + post.slug}
 							key={post.slug}
 							className="hover:underline text-green"
 						>
-							<h2 className="text-3xl pt-4 font-mono font-normal text-fgalt">
-								{post.title}
+							<div
+								className="inline-block text-left text-3xl mr-10 font-mono font-normal text-cyan"
+								style={{verticalAlign: 'top'}}
+							>
 								<p className="text-xl font-normal text-cyan">
-									{post.date}
-								</p>	
-							</h2>
+									<sub style={{verticalAlign: 'top'}}>{post.date}</sub>
+								</p>
+							</div>
+							<div
+								className="inline-block text-right text-xl ml-10 mb-1 font-mono font-bold text-fgalt"
+								style={{verticalAlign: 'top'}}
+							>
+								<p>
+									{post.title}
+								</p>		
+							</div>
+							<hr className="border-black border-1" />	
 						</a>
 					</div>
 				))}

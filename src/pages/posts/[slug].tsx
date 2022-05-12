@@ -58,8 +58,24 @@ const Post: NextPage<Props> = ({ post }) => {
 				<meta name="description" content={post.description} />
 			</Head>
 			<article>
-				<h1 className="text-5xl text-center mt-20 text-fgalt">{post.title}</h1>
-				<p className="text-center mt-4 mb-20 text-cyan">{post.date}</p>
+				<h1 className="text-5xl text-center mt-20 mb-10 text-fgalt">{post.title}</h1>
+				<div>
+					<p
+						className="text-1xl text-justify mb-10 text-fgalt"
+					>
+						{post.description}
+					</p>
+				</div>
+				<div>
+					<hr className="border-black border-1 mb-5" />
+					<p className="text-left text-1xl mb-1"><sub>AUTHOR</sub></p>
+					<p className="text-left text-xl mb-5 text-fg">ponte-vecchio</p>
+					<p className="text-left text-1xl mt-10 mb-1"><sub>DATE</sub></p>
+					<p className="text-left text-xl mb-10 text-fg">{post.date}</p>
+					<hr className="border-black border-1 mb-5" />
+				</div>
+				
+				
 				<div
 					className="text-fg text-lg max-w-none prose
 					prose-h1:text-darkcyan
@@ -74,13 +90,13 @@ const Post: NextPage<Props> = ({ post }) => {
 					prose-figcaption:text-blue
 					prose-strong:text-fg font-weight-bold
 					prose-em:text-fg font-weight-thin
-					prose-code:text-fgalt
-					prose-code:rounded
-					prose-code:bg-zinc
+					prose-code:text-red
+					// prose-code:rounded 
+					prose-code:bg-bg
 					prose-code:before:text-zinc
 					prose-code:after:text-zinc
 					prose-pre:text-fg
-					prose-pre:bg-zinc
+					prose-pre:bg-bg
 					prose-ol:text-red
 					prose-ul:text-fg
 					prose-li:text-yellow font-weight-thin
@@ -92,7 +108,8 @@ const Post: NextPage<Props> = ({ post }) => {
 					prose-td:text-fg
 					prose-img:text-fg
 					prose-video:text-fg
-					prose-hr:text-fg"
+					prose-hr:text-fg
+					text-justify"
 					dangerouslySetInnerHTML={{ __html: post.content }}
 				/>
 			</article>
