@@ -14,11 +14,11 @@ import rehypeHighlight from 'rehype-highlight'
 const markdownToHTML = async (markdown: string) => {
 	const result = await unified()
 		.use(remarkParse)
+		.use(remarkGfm)
 		.use(remarkHtml)
 		.use(remarkMath)
 		.use(rehypeKatex)
 		// .use(remarkGithub)
-		.use(remarkGfm)
 		.use(rehypeHighlight, {plainText: ['txt', 'text']})
 		.process(markdown);
 	return result.toString();
