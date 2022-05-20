@@ -5,7 +5,7 @@ import { getAllPosts } from "src/lib/blog";
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 export const getStaticProps = async () => {
-	const allPosts = getAllPosts(["slug", "title", "date"]);
+	const allPosts = getAllPosts(["slug", "title", "date", "tag", "description", "author"]);
 	return {
 		props: { allPosts },
 	};
@@ -22,35 +22,44 @@ const Index: NextPage<Props> = ({ allPosts }) => {
 				/>
 				{/* use colorwheel.ico */}
 				<link rel="icon" href="/colorwheel.ico"></link>
-				<img src="https://avatars.githubusercontent.com/u/64239070?v=4" alt="avatar" className="w-32 h-32 rounded-full" />
 			</Head>
-			<div className="flex flex-col items-left justify-left mt-16">
+			<div className="flex-col justify-content-center px-auto py-auto mt-10">
 				{allPosts.map((post) => (
-					<div className="my-3 mb-10" key={post.slug} style={{verticalAlign: 'top'}}>
-						<a
-							href={"posts/" + post.slug}
-							key={post.slug}
-							className="hover:underline text-green"
+				<div className="flex-row justify-content-around flex-col mb-10" key={post.slug} style={{verticalAlign: 'top'}}>
+					<a
+						href={"posts/" + post.slug}
+						key={post.slug}
+						className="click text-darkmagenta rounded"
+					>
+						<div
+							className="flex-col justify-content-xl-start align-items-center text-left text-xl mr-auto"
+							style={{verticalAlign: 'bottom'}}
 						>
-							<div
-								className="inline-block text-left text-3xl mr-10 font-mono font-normal text-cyan"
-								style={{verticalAlign: 'top'}}
+							<h3 className="text-lg">{post.date}</h3>
+							<text
+								className="bg-zinc text-white rounded mt-2 text-sm"
 							>
-								<p className="text-xl font-normal text-cyan">
-									<sub style={{verticalAlign: 'top'}}>{post.date}</sub>
-								</p>
-							</div>
-							<div
-								className="inline-block text-right text-xl ml-10 mb-1 font-mono font-bold text-fgalt"
-								style={{verticalAlign: 'top'}}
-							>
-								<p>
-									{post.title}
-								</p>		
-							</div>
-							<hr className="border-black border-1" />	
-						</a>
-					</div>
+								{post.tag}
+							</text>
+						</div>
+						<div
+							className="w-75 flex-col justify-content-between align-items-stretch font-bold text-3xl mb-1"
+							style={{verticalAlign: 'bottom'}}
+						>
+							<h2>{post.title}</h2>
+							<p
+								className="mt-2 mb-1 ml-auto text-sm text-justify">
+								{post.description}
+							</p>
+						</div>
+						{/* <div className="text-right justify-center font-bold text-sm mb-1">
+							<p>
+								{post.tag}
+							</p>
+						</div> */}
+					</a>
+				<hr className="border-darkmagenta border-1" />
+				</div>
 				))}
 			</div>
 		</>
