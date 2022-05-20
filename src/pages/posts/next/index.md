@@ -1,7 +1,9 @@
 ---
 title: "Lorem Ipsum 2"
+author: "random-user"
 date: "2020-05-13"
 slug: "next"
+tag: "lorem ipsum"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget erat leo. Curabitur et malesuada mi, sed consectetur nisl. Quisque ultrices semper eleifend. Praesent pretium laoreet nunc, volutpat consequat odio. Nullam lobortis scelerisque accumsan. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam eget metus at lectus laoreet mattis at et purus. Aenean facilisis faucibus aliquet. Etiam placerat non mi quis gravida. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed imperdiet leo a quam consequat varius."
 ---
 
@@ -24,6 +26,15 @@ with open(r'somefilename') as f:
 ## 2. Dolor
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget erat leo. Curabitur et malesuada mi, sed consectetur nisl. Quisque ultrices semper eleifend. Praesent pretium laoreet nunc, volutpat consequat odio. Nullam lobortis scelerisque accumsan. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam eget metus at lectus laoreet mattis at et purus. Aenean facilisis faucibus aliquet. Etiam placerat non mi quis gravida. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed imperdiet leo a quam consequat varius.
+
+| Name | Position | E-mail |
+| :--- | :--- | :--- |
+| Jane Cooper | Manager | jane.cooper@example.com |
+| Cody Fischer | Designer | cody.fischer@example.com |
+| Leonard Kennedy | Developer | leonard.kennedy@example.com | 
+| Mary Smith | Developer | mary.smith@example.com |
+| Anna Thompson | Developer | anna.thompson@example.com |
+|
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget erat leo. Curabitur et malesuada mi, sed consectetur nisl. Quisque ultrices semper eleifend. Praesent pretium laoreet nunc, volutpat consequat odio. Nullam lobortis scelerisque accumsan. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam eget metus at lectus laoreet mattis at et purus. Aenean facilisis faucibus aliquet. Etiam placerat non mi quis gravida. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed imperdiet leo a quam consequat varius.
 
@@ -52,20 +63,7 @@ src = "b.txt"
 data_raw = [x for x in open(src).read().strip().split("\n")]
 parser = {
     "0": "0000",
-    "1": "0001",
-    "2": "0010",
-    "3": "0011",
-    "4": "0100",
-    "5": "0101",
-    "6": "0110",
-    "7": "0111",
-    "8": "1000",
-    "9": "1001",
-    "A": "1010",
-    "B": "1011",
-    "C": "1100",
-    "D": "1101",
-    "E": "1110",
+    ...
     "F": "1111",
 }
 
