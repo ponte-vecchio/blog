@@ -4,9 +4,9 @@ import ErrorPage from "next/error";
 import Head from "next/head";
 import { getAllPosts, getPostBySlug } from "src/lib/blog";
 import markdownToHTML from "src/lib/markdownToHTML";
-import { useEffect } from "react";
-import hljs from 'highlight.js';
-// import 'highlight.js/styles/github.css';
+import { useEffect, useLayoutEffect } from "react";
+import hljs from 'highlight.js/lib/common';
+// import python from 'highlight.js/lib/languages/python'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -28,9 +28,11 @@ export const getStaticProps = async ({ params }: any) => {
 	const post = getPostBySlug(params.slug, [
 		"slug",
 		"title",
+		"author",
 		"date",
 		"description",
 		"content",
+		"tag"
 	]);
 	const content = await markdownToHTML(post.content);
 	return {
@@ -50,65 +52,78 @@ const Post: NextPage<Props> = ({ post }) => {
 	}
 	useEffect(() => {
 		hljs.highlightAll();
-	}, [hljs]);
+	}, []);
 	return (
 		<>
 			<Head>
+				<style>
+					@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+					@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200&display=swap');
+				</style>
 				<title>{post.title + " | ponte-vecchio"}</title>
 				<meta name="description" content={post.description} />
 			</Head>
 			<article>
-				<h1 className="text-5xl text-center mt-20 mb-10 text-fgalt">{post.title}</h1>
+				<h1 className="font-ibm text-5xl text-center mt-20 mb-10 text-fg font-bold">
+					{post.title}
+				</h1>
 				<div>
-					<p
-						className="text-1xl text-justify mb-10 text-fgalt"
-					>
+					<p className="font-ibm text-1xl text-justify mb-10 text-fgalt">
 						{post.description}
 					</p>
 				</div>
-				<div>
-					<hr className="border-black border-1 mb-5" />
-					<p className="text-left text-1xl mb-1"><sub>AUTHOR</sub></p>
-					<p className="text-left text-xl mb-5 text-fg">ponte-vecchio</p>
-					<p className="text-left text-1xl mt-10 mb-1"><sub>DATE</sub></p>
-					<p className="text-left text-xl mb-10 text-fg">{post.date}</p>
+				<div className="font-ibm text-left text-fgalt text-xl">
+					<hr className="border-black border-1 mb-2" />
+					<p className="text-sm mb-1 text-red"><sub>AUTHOR</sub></p>
+					<p className="mb-2 font-normal">{post.author}</p>
+					<p className="text-sm mt-2 mb-1 text-red"><sub>DATE</sub></p>
+					<p className="mb-2 font-normal">{post.date}</p>
 					<hr className="border-black border-1 mb-5" />
 				</div>
 				
 				
 				<div
-					className="text-fg text-lg max-w-none prose
-					prose-h1:text-darkcyan
-					prose-h2:text-cyan
-					prose-h3:text-darkmagenta
-					prose-h4:text-magenta
-					prose-p:text-fg
-					prose-a:text-darkgreen
+					className="px-auto py-auto mx-auto my-auto font-ibm max-w-none
+					text-fgalt2 prose text-lg
+					prose-h1:text-darkmagenta
+					prose-h2:text-magenta
+					prose-h3:text-cyan
+					prose-h4:text-darkcyan
+					prose-h5:text-blue
+					prose-h6:text-darkblue
+					prose-p:text-fgalt2
+					prose-a:text-fgalt2
 					prose-a:no-underline
 					prose-blockquote:text-fg
+					prose-blockquote:before:block
 					prose-figure:text-blue
 					prose-figcaption:text-blue
-					prose-strong:text-fg font-weight-bold
-					prose-em:text-fg font-weight-thin
-					prose-code:text-magenta
-					// prose-code:rounded 
+					prose-strong:text-fgalt 
+					prose-strong:font-weight-bold
+					prose-em:text-fgalt
+					prose-em:font-italic
+					prose-em:font-weight-thin
+					prose-code:text-darkmagenta
+					prose-code:rounded
 					prose-code:bg-bg
 					prose-code:before:text-zinc
 					prose-code:after:text-zinc
 					prose-pre:text-fg
-					prose-pre:bg-bg
+					prose-pre:bg-magenta
 					prose-ol:text-red
-					prose-ul:text-fg
-					prose-li:text-yellow font-weight-thin
-					prose-li:marker:text-yellow font-weight-thin
+					prose-ul:text-fgalt
+					prose-li:text-fgalt
+					prose-li:marker:text-fgalt2
+					prose-li:font-weight-thin
 					prose-table:text-fg
 					prose-thead:text-fg
-					prose-tr:text-fg
-					prose-th:text-fg
-					prose-td:text-fg
-					prose-img:text-fg
-					prose-video:text-fg
-					prose-hr:text-fg
+					prose-tr:text-fgalt
+					prose-tr:bg-zinc
+					prose-th:text-fgalt
+					prose-td:text-fgalt
+					prose-img:text-fgalt
+					prose-video:text-fgalt
+					prose-hr:text-black
 					text-justify"
 					dangerouslySetInnerHTML={{ __html: post.content }}
 				/>
