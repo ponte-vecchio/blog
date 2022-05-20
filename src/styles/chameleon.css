@@ -16,29 +16,34 @@
     --darkcyan: #6ab37c;
     --white: #ffffff;
 }
+
+/* old chameleon */
 pre code.hljs {
     display: block;
     overflow-x: auto;
-    padding: 1em
+    padding: .5em
 }
 
-code.hljs {
+/* code.hljs {
     padding: 3px 5px
-}
+} */
 
 .hljs {
     color: var(--fg);
     background: var(--bg);
     font-weight: 100;
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
 }
 
 .hljs-keyword, .hljs-literal, .hljs-name, .hljs-section, .hljs-selector-id, .hljs-selector-tag {
-    font-weight: 500;
     color: var(--darkgreen)
 }
 
 .hljs-builtin, .hljs-title.function, .hljs-title.function.invoke, .hljs-title.class {
     color:#73add3;
+    font-weight: 600;
 }
 
 .hljs-subst, .hljs-module {
@@ -102,4 +107,49 @@ code.hljs {
 
 .hljs-strong {
     font-weight: 700
+}
+
+
+/* code.hljs {
+    padding: 3px 5px
+} */
+
+.hljs {
+    background: var(--bg);
+}
+
+.hljs, .hljs-attr, .hljs-function, .hljs-name, .hljs-params, .hljs-subst, .hljs-type {
+    color: var(--fg-alt)
+}
+
+.hljs-addition, .hljs-comment, .hljs-regexp, .hljs-section, .hljs-selector-pseudo {
+    color: #73ba2599;
+}
+
+.hljs-built_in, .hljs-class, .hljs-keyword, .hljs-meta .hljs-keyword, .hljs-selector-class {
+    color: var(--cyan);
+}
+
+.hljs-code, .hljs-tag, .hljs-title, .hljs-variable {
+    color: var(--darkgreen)
+}
+
+.hljs-selector-attr, .hljs-string {
+    color: var(--red)
+}
+
+.hljs-attribute, .hljs-deletion, .hljs-link, .hljs-symbol, .hljs-meta {
+    color: var(--darkblue)
+}
+
+.hljs-literal, .hljs-selector-id, .hljs-number {
+    color: var(--yellow);
+}
+
+.hljs-name, .hljs-strong {
+    font-weight: 700
+}
+
+.hljs-emphasis {
+    font-style: italic
 }
