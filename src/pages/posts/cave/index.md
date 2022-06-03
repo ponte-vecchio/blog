@@ -43,9 +43,13 @@ description: "Coding fun while exploring caves."
 
 붉은 색으로 나타낸 이동 경로의 위험지수를 합 했을 때, 그 합이 **40**인 것을 확인할 수 있는데요. 우리 잠수함도 최소한의 총 위험도를 가지고 동굴을 나간다고 할 때 그 값을 구해봅시다.
 
-[**테스트용 좌표**](https://gist.githubusercontent.com/ponte-vecchio/d5d0e0cb2cbbef6138929c2904045f5d/raw/02a1c9f8965da91ab0e8305626ed4bfba425bb7c/txt)
+### 문제 1번
+[**테스트용 좌표**](https://gist.githubusercontent.com/ponte-vecchio/d5d0e0cb2cbbef6138929c2904045f5d/raw/02a1c9f8965da91ab0e8305626ed4bfba425bb7c/txt)에서 최소한의 총 위험도를 구해보세요. 
 
-[**실전 좌표**](https://gist.githubusercontent.com/ponte-vecchio/367cc1ccfcc6b982c14985180cc2183e/raw/46e5aa6adeb3043fbe5d1a552e09a00a1398c795/txt)
+### 문제 2번
+훨씬 커진 [**실전 좌표**](https://gist.githubusercontent.com/ponte-vecchio/367cc1ccfcc6b982c14985180cc2183e/raw/46e5aa6adeb3043fbe5d1a552e09a00a1398c795/txt)에서 최소한의 총 위험도를 구해보세요.
 
 ### 요령
-*테스트용 좌표*는 규모가 작기 때문에 이것으로 먼저 정답을 얻을 수 있는지 확인하고 *실전 좌표*에 도전하세요.
+- 각 문제에 굵게 표시된 `좌표`를 클릭하면 해당 문제의 좌표가 텍스트 파일로 표시됩니다.
+
+- 1번문제의 *테스트용 좌표*는 규모가 작기 때문에 이것으로 먼저 정답을 얻을 수 있는지 확인하고 2번문제 *실전 좌표*에 도전하세요.
