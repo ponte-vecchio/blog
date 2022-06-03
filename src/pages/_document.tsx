@@ -4,7 +4,7 @@ class MyDocument extends Document {
 	render() {
 		return (
 			<Html
-				className="px-12 lg:mr-24 lg:ml-24"
+				className="px-12 lg:mr-24 lg:ml-24 md:mr-16 md:ml-16 sm:mr-8 sm:ml-8"
 			>
 				<Head>
 					<style>
