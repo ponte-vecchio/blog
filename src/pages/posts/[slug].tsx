@@ -98,10 +98,9 @@ const Post: NextPage<Props> = ({ post }) => {
 					prose-blockquote:before:block
 					prose-figure:text-blue
 					prose-figcaption:text-blue
-					prose-strong:text-fgalt 
+					prose-strong:text-red
 					prose-strong:font-weight-bold
 					prose-em:text-fgalt
-					prose-em:font-italic
 					prose-em:font-weight-thin
 					prose-code:text-darkmagenta
 					prose-code:rounded
@@ -113,7 +112,7 @@ const Post: NextPage<Props> = ({ post }) => {
 					prose-ol:text-red
 					prose-ul:text-fgalt
 					prose-li:text-fgalt
-					prose-li:marker:text-fgalt2
+					prose-li:marker:text-fgalt
 					prose-li:font-weight-thin
 					prose-table:text-fg
 					prose-thead:text-fg
